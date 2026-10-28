@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+    <!-- Floor -->
+      <a-plane rotation="-90 0 0" width="10" height="20" color="#C8B89A"></a-plane>
+
+      <!-- Walls -->
+       <a-box position = "0 2 -10" width="10" height="4" depth="0.2" color="#F2EFE9"></a-box>
+       <a-box position = "0 2 10" width="10" height="4" depth="0.2" color="#F2EFE9"></a-box>
+       <a-box position = "-5 2 0" width="0.2" height="4" depth="20" color="#F2EFE9"></a-box>
+       <a-box position = "5 2 0" width="0.2" height="4" depth="20" color="#F2EFE9"></a-box>
+
+       <!-- Ceiling -->
+        <a-plane position="0 4 0" rotation="90 0 0" width="10" height="20" color="#FFFFFF"></a-plane>
+    </a-scene>
+  </body>
+</html>
