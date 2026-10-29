@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+            <img id="greatwall" src="images/great_wall.jpeg" alt="Image of the Great Wall of China">
+            <img id="colosseum" src="colosseum.jpg" alt="Image of the Colosseum in Rome">
+        </a-assets>
+    <!-- Floor -->
+      <a-plane rotation="-90 0 0" width="10" height="20" color="#C8B89A"></a-plane>
+
+      <!-- Walls -->
+       <a-box position = "0 2 -10" width="10" height="4" depth="0.2" color="#F2EFE9"></a-box>
+       <a-box position = "0 2 10" width="10" height="4" depth="0.2" color="#F2EFE9"></a-box>
+       <a-box position = "-5 2 0" width="0.2" height="4" depth="20" color="#F2EFE9"></a-box>
+       <a-box position = "5 2 0" width="0.2" height="4" depth="20" color="#F2EFE9"></a-box>
+
+       <!-- Ceiling -->
+        <a-plane position="0 4 0" rotation="90 0 0" width="10" height="20" color="#FFFFFF"></a-plane>
+
+        <!-- Great Wall of China Frame (left wall)-->
+         <a-box position="-4.85 2 -6" rotation="0 90 0" width="2.4" height="1.8" depth="0.05" color="#5C4033"></a-box>
+         <a-plane position="-4.85 2 -6" rotation="0 90 0" width="2" height="1.4" color="#888"></a-plane>
+
+        <a-image src="#greatwall" position="-4.8 2 -6" rotation="0 90 0" width="2" height="1.4"></a-image>
+
+        <!-- Colosseum in Rome Frame (right wall) -->
+        <a-box position="4.85 2 -6" rotation="0 -90 0" width="2.4" height="1.8" depth="0.05" color="#5C4033"></a-box>
+        <a-plane position="4.85 2 -6" rotation="0 -90 0" width="2" height="1.4" color="#888"></a-plane>
+        <a-box position="0 2.3 -32" width="8.3" height="4.6" depth="0.2" material="color: #777777; roughness: 0.92"></a-box>
+        <a-box position="-3.93 0.12 -15" width="0.08" height="0.24" depth="33.7" material="color: #3c261b"></a-box>
+        <a-box position="3.93 0.12 -15" width="0.08" height="0.24" depth="33.7" material="color: #3c261b"></a-box>
+        <a-image src="#colosseum" position="4.8 2 -6" rotation="0 -90 0" width="2" height="1.4"></a-image>
+
+    </a-scene>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
