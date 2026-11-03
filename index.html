@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Museum of Wonders</title>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <style>
-  #start {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #f7ebdd;
-    color: #5a4636;
-    font-family: Georgia, serif;
-    text-align: center;
-  }
-  #start button {
-    margin-top: 24px;
-    padding: 14px 36px;
-    font-size: 18px;
-    border-radius: 999px;
-    border: 1px solid #5a4636;
-    background: transparent;
-    color: #5a4636;
-    cursor: pointer;
-  }
-</style>
+    #start {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f7ebdd;
+      color: #5a4636;
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+
+    #start button {
+      margin-top: 24px;
+      padding: 14px 36px;
+      font-size: 18px;
+      border-radius: 999px;
+      border: 1px solid #5a4636;
+      background: transparent;
+      color: #5a4636;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
   <div id="start">
-  <h1>Museum of Seven Wonders Of the World</h1>
-  <p>Put on headphones, relax, and get comfortable.<br>Look at a frame to hear its story,and let the narration guide you.<br>Look away to pause.</p>
-  <button id="begin">Begin</button>
-</div>
+    <h1>Museum of Seven Wonders Of the World</h1>
+    <p>Put on headphones, relax, and get comfortable.<br>Look at a frame to hear its story,and let the narration guide
+      you.<br>Look away to pause.</p>
+    <button id="begin">Begin</button>
+  </div>
   <a-scene>
 
     <!-- Photos are loaded once here, then used by frames -->
@@ -97,7 +101,8 @@
     <a-light type="ambient" color="#ffe3c2" intensity="0.75"></a-light>
 
     <a-camera position="0 1.6 1">
-      <a-cursor id="cursor" color="#8a5a3c" fuse="true" fuse-timeout="2000" raycaster="objects: .clickable; enabled: false"></a-cursor>
+      <a-cursor id="cursor" color="#8a5a3c" fuse="true" fuse-timeout="2000"
+        raycaster="objects: .clickable; enabled: false"></a-cursor>
     </a-camera>
 
   </a-scene>
@@ -117,4 +122,5 @@ setInterval(function () {
 </script>
 
 </body>
+
 </html>
