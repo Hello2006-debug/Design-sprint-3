@@ -61,10 +61,15 @@
       <img id="greatwall_3" src="images/great_wall_3.jpeg" alt="Image of the Great Wall of China with fall leaves">
       <img id="greatwall_4" src="images/great_wall_4.jpeg" alt="Image of the Great Wall of China overview">
       <!-- Colosseum -->
-       <img id="colosseum" src="images/colosseum_1.jpg" alt="Image of the Colosseum with stormy clouds">
-       <img id="colosseum" src="images/colosseum_2.jpg" alt="Image of the Colosseum lit up">
-       <img id="colosseum" src="images/colosseum_3.jpg" alt="Image of the Colosseum at night">
-       <img id="colosseum" src="images/colosseum_4.jpg" alt="Image of the Colosseum showing brick path">
+      <img id="colosseum_1" src="images/colosseum_1.jpg" alt="Image of the Colosseum with stormy clouds">
+      <img id="colosseum_2" src="images/colosseum_2.jpg" alt="Image of the Colosseum lit up">
+      <img id="colosseum_3" src="images/colosseum_3.jpg" alt="Image of the Colosseum at night">
+      <img id="colosseum_4" src="images/colosseum_4.jpg" alt="Image of the Colosseum showing brick path">
+      <!-- Petra -->
+      <img id="petra_1" src="images/petra_1.jpg" alt="Image of Petra close-up">
+      <img id="petra_2" src="images/petra_2.jpg" alt="Image of Petra from canyon">
+      <img id="petra_3" src="images/petra_3.jpg" alt="Image of Petra lit with candles">
+      <img id="petra_4" src="images/petra_4.jpg" alt="Image of Petra with a camel in front">
     </a-assets>
 
     <!-- THE MUSEUM: everything inside this tag moves together as one thing -->
@@ -83,6 +88,18 @@
       <!-- Cream baseboards -->
       <a-box position="-5.97 0.1 0" width="0.06" height="0.2" depth="8" color="#fffaf3"></a-box>
       <a-box position="5.97 0.1 0" width="0.06" height="0.2" depth="8" color="#fffaf3"></a-box>
+
+      <!-- Spotlights over the frames -->
+      <a-light type="spot" target="#taj_frame" position="-3 3.6 -2.8" color="#fff1dc" intensity="0.8" angle="35"
+        penumbra="0.6" distance="5" decay="1"></a-light>
+      <a-light type="spot" target="#christ_frame" position="3 3.6 -2.8" color="#fff1dc" intensity="0.8" angle="35"
+        penumbra="0.6" distance="5" decay="1"></a-light>
+      <a-light type="spot" target="#greatwall_frame" position="-4.8 3.6 0" color="#fff1dc" intensity="0.8" angle="35"
+        penumbra="0.6" distance="5" decay="1"></a-light>
+      <a-light type="spot" target="#colosseum_frame" position="4.8 3.6 0" color="#fff1dc" intensity="0.8" angle="35"
+        penumbra="0.6" distance="5" decay="1"></a-light>
+      <a-light type="spot" target="#petra_frame" position="0 3.6 2.8" color="#fff1dc" intensity="0.8" angle="35"
+        penumbra="0.6" distance="5" decay="1"></a-light>
 
       <!-- Taj Mahal frame (front wall, slot 2) -->
       <a-box position="-2.5 1.8 -3.95" width="2.6" height="2" depth="0.05" color="#d9b382"></a-box>
@@ -108,7 +125,7 @@
       <a-box position="-5.93 0.72 0" rotation="0 90 0" width="2.8" height="0.02" depth="0.03" color="#d9b382"></a-box>
       <a-text value="Great Wall of China" position="-5.92 0.55 0" rotation="0 90 0" align="center" width="2.6"
         wrap-count="20" color="#5a4636"></a-text>
-      <a-text value="China  -  Practice: ___" position="-5.92 0.3 0" rotation="0 90 0" align="center" width="2.6"
+      <a-text value="China  -  Practice: endurance" position="-5.92 0.3 0" rotation="0 90 0" align="center" width="2.6"
         wrap-count="34" color="#8a5a3c"></a-text>
 
       <!-- Christ The Redeemer frame (front wall, slot 3) -->
@@ -123,13 +140,13 @@
       <a-box position="2.5 0.72 -3.93" width="2.8" height="0.02" depth="0.03" color="#d9b382"></a-box>
       <a-text value="Christ the Redeemer" position="2.5 0.55 -3.92" align="center" width="2.6" wrap-count="20"
         color="#5a4636"></a-text>
-      <a-text value="Rio de Janeiro  -  Practice: openness" position="2.5 0.3 -3.92" align="center" width="2.6"
+      <a-text value="Rio de Janeiro  -  Practice: openness" position="2.5l 0.3 -3.92" align="center" width="2.6"
         wrap-count="34" color="#8a5a3c"></a-text>
 
       <!-- Colosseum frame (right wall) -->
       <a-box position="5.95 1.8 0" rotation="0 -90 0" width="2.6" height="2" depth="0.05" color="#d9b382"></a-box>
       <a-plane position="5.92 1.8 0" rotation="0 -90 0" width="2.4" height="1.8" color="#fff7ec"></a-plane>
-      <a-image id="colosseum_frame" class="clickable" src="#colosseum" position="5.9 1.8 0" rotation="0 -90 0"
+      <a-image id="colosseum_frame" class="clickable" src="#colosseum_1" position="5.9 1.8 0" rotation="0 -90 0"
         width="2.2" height="1.6"></a-image>
 
       <!-- Plaque: Colosseum -->
@@ -137,8 +154,24 @@
       <a-box position="5.93 0.72 0" rotation="0 -90 0" width="2.8" height="0.02" depth="0.03" color="#d9b382"></a-box>
       <a-text value="Colosseum" position="5.92 0.55 0" rotation="0 -90 0" align="center" width="2.6" wrap-count="20"
         color="#5a4636"></a-text>
-      <a-text value="Rome, Italy  -  Practice: ___" position="5.92 0.3 0" rotation="0 -90 0" align="center" width="2.6"
+      <a-text value="Rome, Italy  -  Practice: impermanence" position="5.92 0.3 0" rotation="0 -90 0" align="center"
+        width="2.6" wrap-count="34" color="#8a5a3c"></a-text>
+
+      <!-- Petra frame -->
+      <a-box position="0 2.05 3.95" rotation="0 180 0" width="1.8" height="2.5" depth="0.05" color="#d9b382"></a-box>
+      <a-plane position="0 2.05 3.92" rotation="0 180 0" width="1.6" height="2.3" color="#fff7ec"></a-plane>
+      <a-image id="petra_frame" class="clickable" src="#petra_1" position="0 2.05 3.9" rotation="0 180 0" width="1.4"
+        height="2.1"></a-image>
+
+      <!-- Plaque: Petra -->
+      <a-box position="0 0.42 3.95" rotation="0 180 0" width="2.2" height="0.66" depth="0.03" color="#fffaf3"></a-box>
+      <a-box position="0 0.72 3.93" rotation="0 180 0" width="2.2" height="0.02" depth="0.03" color="#d9b382"></a-box>
+      <a-text value="Petra" position="0 0.55 3.92" rotation="0 180 0" align="center" width="2" wrap-count="20"
+        color="#5a4636"></a-text>
+      <a-text value="Petra, Jordan  -  Practice: awe" position="0 0.3 3.92" rotation="0 180 0" align="center" width="2"
         wrap-count="34" color="#8a5a3c"></a-text>
+
+
     </a-entity>
 
     <!-- Light and camera stay OUTSIDE the museum, so moving the museum doesn't move you -->
