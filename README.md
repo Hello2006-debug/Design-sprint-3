@@ -59,8 +59,13 @@ Photos, all from Unsplash under the Unsplash License:
 - `taj_mahal_2.jpg`: Photo by Shifan Hassan on Unsplash, https://unsplash.com/photos/dCjcGh38WAc
 - `taj_mahal_3.jpg`: Photo by Kotryna Juskaite on Unsplash, https://unsplash.com/photos/2eAGSipgb8A
 - `taj_mahal_4.jpg`: Photo by Sylwia Bartyzel on Unsplash, https://unsplash.com/photos/eU4pipU_8HA
+- `christ_redeemer_1.jpg`: Photo by Alan Aprilio on Unsplash, https://unsplash.com/photos/zUJFq4YOYIQ
+- `christ_redeemer_2.jpg`: Photo by Effie Kimble on Unsplash, https://unsplash.com/photos/aMBnG1e9kiE
+- `christ_redeemer_3.jpg`: Photo by Fernando Santos on Unsplash, https://unsplash.com/photos/0jcM54HBO4c
+- `christ_redeemer_4.jpg`: Photo by Gustavo Nacht on Unsplash, https://unsplash.com/photos/aUXsL7rDOcw
 
-Narration: generated with Speechify. Facts checked against Wikipedia and History.com.
+Narration: script written by Melissa, generated with the SubtitleKit text-to-speech tool (https://subtitlekit.com/en/text-to-speech/). Facts checked against Britannica and History Hit.
+
 
 ### Shannon (Great Wall of China)
 
