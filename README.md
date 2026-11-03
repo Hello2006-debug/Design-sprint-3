@@ -67,6 +67,10 @@ Photos, all from Unsplash under the Unsplash License:
 - `petra_2.jpg`: Photo by Alex Vasey on Unsplash, https://unsplash.com/photos/treasury-in-petra-sandstone-canyon-5_Bu25SV6X8
 - `petra_3.jpg`: Photo by Filippo Cesarini on Unsplash, https://unsplash.com/photos/brown-concrete-building-during-daytime-c8F1hJ_UTrk
 - `petra_4.jpg`: Photo by Juanma Clemente-Alloza on Unsplash, https://unsplash.com/photos/brown-camel-in-front-of-brown-rock-formation-during-daytime-py8omnp-hko
+- `machu_1.jpg`: Photo by Eddie Kiszka on Unsplash, https://unsplash.com/photos/machu-picchu-stone-ruins-in-peru-rFESpq5MMTg
+- `machu_2.jpg`: Photo by Cynthia Winward on Unsplash, https://unsplash.com/photos/llamas-overlooking-machu-picchu-stone-ruins-8gLHfiP6eKw
+- `machu_3.jpg`: Photo by Willian Justen de Vasconcellos on Unsplash, https://unsplash.com/photos/llamas-overlooking-machu-picchu-stone-ruins-8gLHfiP6eKw
+- `machu_4.jpg`: Photo by Ed Wingate on Unsplash, https://unsplash.com/photos/the-sun-shines-on-the-ruins-of-a-mountain-kxkhsVY8-vU
 
 Narration: script written by Melissa, generated with the SubtitleKit text-to-speech tool (https://subtitlekit.com/en/text-to-speech/). Facts checked against Britannica and History Hit.
 
