@@ -87,7 +87,7 @@
 
       <!-- Floor and ceiling (12 wide, 8 deep) -->
       <a-plane rotation="-90 0 0" width="12" height="8" color="#d9bd9a"></a-plane>
-      <a-plane position="0 4 0" rotation="90 0 0" width="12" height="8" color="#fffaf2"></a-plane>
+      <a-plane position="0 4 0" rotation="90 0 0" width="12" height="8" color="ffffff"></a-plane>
 
       <!-- Four walls -->
       <a-plane position="0 2 -4" width="12" height="4" color="#f7ebdd"></a-plane>
@@ -95,9 +95,32 @@
       <a-plane position="-6 2 0" rotation="0 90 0" width="8" height="4" color="#f7ebdd"></a-plane>
       <a-plane position="6 2 0" rotation="0 -90 0" width="8" height="4" color="#f7ebdd"></a-plane>
 
-      <!-- Cream baseboards -->
-      <a-box position="-5.97 0.1 0" width="0.06" height="0.2" depth="8" color="#fffaf3"></a-box>
-      <a-box position="5.97 0.1 0" width="0.06" height="0.2" depth="8" color="#fffaf3"></a-box>
+      <!-- Ceiling trim (crown molding) on all four walls -->
+      <!-- Cream boards -->
+      <a-box position="0 3.9 -3.97" width="12" height="0.2" depth="0.06" color="#8b6a4f"></a-box>
+      <a-box position="0 3.9 3.97" width="12" height="0.2" depth="0.06" color="#8b6a4f"></a-box>
+      <a-box position="-5.97 3.9 0" width="0.06" height="0.2" depth="8" color="#8b6a4f"></a-box>
+      <a-box position="5.97 3.9 0" width="0.06" height="0.2" depth="8" color="#8b6a4f"></a-box>
+
+      <!-- Thin gold line along the bottom edge -->
+      <a-box position="0 3.79 -3.96" width="12" height="0.02" depth="0.08" color="#d9b382"></a-box>
+      <a-box position="0 3.79 3.96" width="12" height="0.02" depth="0.08" color="#d9b382"></a-box>
+      <a-box position="-5.96 3.79 0" width="0.08" height="0.02" depth="8" color="#d9b382"></a-box>
+      <a-box position="5.96 3.79 0" width="0.08" height="0.02" depth="8" color="#d9b382"></a-box>
+
+      <!-- Doorway (left wall, near the back corner) -->
+      <!-- wood border -->
+      <a-plane position="-5.99 1.175 2.7" rotation="0 90 0" width="1.4" height="2.35"
+        material="color: #8b6a4f"></a-plane>
+      <!-- cap across the top -->
+      <a-plane position="-5.98 2.39 2.7" rotation="0 90 0" width="1.56" height="0.1"
+        material="color: #8b6a4f"></a-plane>
+      <!-- thin gold line inside the border -->
+      <a-plane position="-5.98 1.12 2.7" rotation="0 90 0" width="1.18" height="2.24"
+        material="color: #d9b382"></a-plane>
+      <!-- dark opening -->
+      <a-plane position="-5.97 1.1 2.7" rotation="0 90 0" width="1.1" height="2.2"
+        material="color: #2e2620; shader: flat"></a-plane>
 
       <!-- Spotlights over the frames -->
       <a-light type="spot" target="#taj_frame" position="-3 3.6 -2.8" color="#fff1dc" intensity="0.8" angle="35"
@@ -220,7 +243,21 @@
 
     <a-camera position="0 1.6 1">
       <a-cursor id="cursor" color="#8a5a3c" fuse="true" fuse-timeout="2000"
-        raycaster="objects: .clickable; enabled: false"></a-cursor>
+        raycaster="objects: .clickable; enabled: false">
+
+        <!-- Loader: fills up around the cursor while you look at a frame -->
+        <a-entity id="loader" visible="false">
+          <!-- faint track behind it -->
+          <a-entity geometry="primitive: ring; radiusInner: 0.035; radiusOuter: 0.045"
+            material="color: #8a5a3c; shader: flat; transparent: true; opacity: 0.25"></a-entity>
+          <!-- the part that fills -->
+          <a-entity id="loader_fill" position="0 0 0.001"
+            geometry="primitive: ring; radiusInner: 0.035; radiusOuter: 0.045; thetaStart: 90; thetaLength: -0.1"
+            material="color: #8a5a3c; shader: flat; side: double"
+            animation__fill="property: geometry.thetaLength; from: -0.1; to: -360; dur: 2000; easing: linear; startEvents: loader-start; pauseEvents: loader-stop; autoplay: false"></a-entity>
+        </a-entity>
+
+      </a-cursor>
     </a-camera>
 
   </a-scene>
@@ -233,6 +270,7 @@
   <script src="great_wall.js"></script>
   <script src="machu_piccu.js"></script>
   <script src="chichen.js"></script>
+  <script src="loader.js"></script>
   <div id="dbg"
     style="position:fixed;bottom:0;left:0;z-index:99;background:#fff;color:#000;font:12px monospace;padding:4px"></div>
   <script>

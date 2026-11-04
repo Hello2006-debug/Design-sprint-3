@@ -4,6 +4,22 @@ const MAX_W = 2.2;     // the biggest a photo can be inside the mat
 const MAX_H = 1.6;
 const allNarrations = [];
 let started = false;
+const AUDIO_FADE_MS = 1200;   // how long the fade-out takes
+
+// Smoothly change an audio's volume, then run "done" when finished
+function fadeVolume(audio, to, ms, done) {
+    clearInterval(audio._fadeTimer);
+    const from = audio.volume;
+    const start = performance.now();
+    audio._fadeTimer = setInterval(() => {
+        const t = Math.min(1, (performance.now() - start) / ms);
+        audio.volume = from + (to - from) * t;
+        if (t === 1) {
+            clearInterval(audio._fadeTimer);
+            if (done) done();
+        }
+    }, 30);
+}
 
 // Call this once per wonder, from that wonder's own file
 function setupFrame({ frameId, photos, narrationFile, maxW = MAX_W, maxH = MAX_H }) {
@@ -43,8 +59,15 @@ function setupFrame({ frameId, photos, narrationFile, maxW = MAX_W, maxH = MAX_H
     });
 
     // Look for 2 seconds: start. Look away: pause.
-    frame.addEventListener('click', () => { if (started && narration) narration.play(); });
-    frame.addEventListener('mouseleave', () => { if (narration) narration.pause(); });
+    frame.addEventListener('click', () => {
+        if (!started || !narration) return;
+        narration.play();
+        fadeVolume(narration, 1, 600);        // fade back in
+    });
+    frame.addEventListener('mouseleave', () => {
+        if (!narration || narration.paused) return;
+        fadeVolume(narration, 0, AUDIO_FADE_MS, () => narration.pause());   // fade out, then pause
+    });
 
     if (narration) {
         allNarrations.push(narration);
