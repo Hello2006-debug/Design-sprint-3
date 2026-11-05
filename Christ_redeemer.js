@@ -2,5 +2,5 @@
 setupFrame({
   frameId: '#christ_frame',
   photos: ['#christ_1', '#christ_2', '#christ_3', '#christ_4'],
-  narrationFile: 'audio/christ_redeemer.mp3'
+  narrationFile: 'audio/Christ_Redeemer.mp3'
 });
